@@ -12,8 +12,8 @@ local function solvetrajectory(origin, target, speed)
     local coef0 = dot(gv, gv) / 4;
     local coef1 = dot(gv, dir) - speed * speed;
     local const = dot(dir, dir);
-    local r = solvebiquadratic(coef0, coef1, const);
-    return (r and gv * r / 2 + dir / r), r;
+    local time = solvebiquadratic(coef0, coef1, const);
+    return (time and gv * time / 2 + dir / time), time;
 end
 
 
